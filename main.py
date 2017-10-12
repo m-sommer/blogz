@@ -22,9 +22,9 @@ class Post(db.Model):
 def index():
 
     if request.args:
-            blog_id = request.args.get('id')
-            post = Post.query.get(blog_id)
-            return render_template('post.html', post=post)
+        blog_id = request.args.get('id')
+        post = Post.query.get(blog_id)
+        return render_template('post.html', post=post)
     
     if request.method == 'POST':
         entry_title = request.form['entry_title']
